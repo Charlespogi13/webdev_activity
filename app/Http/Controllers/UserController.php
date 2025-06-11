@@ -19,7 +19,7 @@ class UserController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:6',
+            'password' => 'required|string|min:8|confirmed',
         ]);
 
         // Create the user
